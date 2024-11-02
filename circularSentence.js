@@ -33,13 +33,13 @@
 // - Leetcode's last character is not equal to is's first character.
 // The sentence is not circular.
 
-var isCircularSentence = function(sentence) {
-    let spl = sentence.split(" ");
-  let words = sentence.split(" ");
-  for (let i = 0; i < words.length; i++) {
-    if (words[i].charAt(words[i].length - 1) !== words[(i + 1) % words.length].charAt(0)) {
-      return false;
-    }
+var isCircularSentence = function (sentence) {
+  if (sentence[0] !== sentence[sentence.length - 1]) return false;
+  let spl = sentence.split(" ");
+  for (let i = 1; i < spl.length; i++) {
+    let current = spl[i];
+    let prev = spl[i - 1];
+    if (current[0] !== prev[prev.length-1]) return false;
   }
   return true;
 };

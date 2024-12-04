@@ -45,3 +45,20 @@
 // console.log(firstMissingPositive([1, 2, 0]));
 // console.log(firstMissingPositive([3, 4, -1, 1]));
 // console.log(firstMissingPositive([7, 8, 9, 11, 12]));
+
+//! 2109. Adding Spaces to a String
+// var addSpaces = function (s, spaces) {
+//   let str = "";
+//   let index = 0;
+//   for (let i = 0; i < s.length; i++) {
+//     if (index < spaces.length && i === spaces[index]) {
+//       str += " ";
+//       index++;
+//     }
+//     str += s[i];
+//   }
+//   return str;
+// };
+// console.log(addSpaces("LeetcodeHelpsMeLearn", [8, 13, 15]));
+// console.log(addSpaces("icodeinpython", [1, 5, 7, 9]));
+// console.log(addSpaces("spacing", [0, 1, 2, 3, 4, 5, 6]));

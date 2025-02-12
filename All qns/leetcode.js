@@ -502,3 +502,375 @@
 
 // const n = 10;
 // console.log(fib(n));
+
+//! 2085. Count Common Words With One Occurrence
+// var countWords = function (words1, words2) {
+//   let count = 0;
+//   for (let i = 0; i < words1.length; i++) {
+//     if (
+//       words1.indexOf(words1[i]) == words1.lastIndexOf(words1[i]) &&
+//       words2.indexOf(words1[i]) >= 0 &&
+//       words2.indexOf(words1[i]) == words2.lastIndexOf(words1[i])
+//     ) {
+//       count++;
+//     }
+//   }
+//   return count;
+// };
+// console.log(
+//   countWords(
+//     ["leetcode", "is", "amazing", "as", "is"],
+//     (words2 = ["amazing", "leetcode", "is"])
+//   )
+// );
+// console.log(countWords(["b", "bb", "bbb"], (words2 = ["a", "aa", "aaa"])));
+// console.log(countWords(["a", "ab"], (words2 = ["a", "a", "a", "ab"])));
+
+//! 21. Merge Two Sorted Lists
+// var mergeTwoLists = function (list1, list2) {
+//   for (let i = 0; i < list1.length; i++) {
+//     for (let j = 0; j < list2.length; j++) {
+//       if (list1[i] > list2[j]) {
+//         list1.splice(i, 0, list2[j]);
+//         list2.splice(j, 1);
+//         j--;
+//       }
+//     }
+//   }
+//   return list1.concat(list2);
+// };
+// console.log(mergeTwoLists([1, 2, 4], [1, 3, 4]));
+// console.log(mergeTwoLists([], []));
+// console.log(mergeTwoLists([], [0]));
+
+//! 3042. Count Prefix and Suffix Pairs I
+// var countPrefixSuffixPairs = function (words) {
+//   let totalPairs = 0;
+//   let n = words.length - 1;
+//   for (let i = 0; i < n; i++) {
+//     let str1 = words[i];
+//     for (let j = i + 1; j <= n; j++) {
+//       let str2 = words[j];
+//       if (str2.length < str1.length) continue;
+//       if (str2.startsWith(str1) && str2.endsWith(str1)) {
+//         totalPairs++;
+//       }
+//     }
+//   }
+//   return totalPairs;
+// };
+// console.log(countPrefixSuffixPairs(["a", "aba", "ababa", "aa"]));
+// console.log(countPrefixSuffixPairs(["pa", "papa", "ma", "mama"]));
+// console.log(countPrefixSuffixPairs(["abab", "ab"]));
+
+//! 1773. Count Items Matching a Rule
+// var countMatches = function (items, ruleKey, ruleValue) {
+//   let match = 0;
+//   for (let i = 0; i < items.length; i++) {
+//     if (ruleKey === "type" && items[i][0] === ruleValue) match += 1;
+//     if (ruleKey === "color" && items[i][1] === ruleValue) match += 1;
+//     if (ruleKey === "name" && items[i][2] === ruleValue) match += 1;
+//   }
+//   return match;
+// };
+// console.log(
+//   countMatches(
+//     [
+//       ["phone", "blue", "pixel"],
+//       ["computer", "silver", "lenovo"],
+//       ["phone", "gold", "iphone"],
+//     ],
+//     (ruleKey = "color"),
+//     (ruleValue = "silver")
+//   )
+// );
+// console.log(
+//   countMatches(
+//     [
+//       ["phone", "blue", "pixel"],
+//       ["computer", "silver", "phone"],
+//       ["phone", "gold", "iphone"],
+//     ],
+//     (ruleKey = "type"),
+//     (ruleValue = "phone")
+//   )
+// );
+
+// //! 2788. Split Strings by Separator
+// var splitWordsBySeparator = function (words, separator) {
+//   let res = [];
+//   for (let i = 0; i < words.length; i++) {
+//     let result = words[i].split(separator).filter((word) => word !== "");
+//     res.push(...result);
+//   }
+//   return res;
+// };
+// console.log(splitWordsBySeparator(["one.two.three", "four.five", "six"], "."));
+// console.log(splitWordsBySeparator(["$easy$", "$problem$"], "$"));
+// console.log(splitWordsBySeparator(["|||"], "|"));
+
+// //! 1002. Find Common Characters
+// var commonChars = function (words) {
+//   let res = [];
+//   let reference = words[0];
+//   for (let char of reference) {
+//     if (words.every((word) => word.includes(char))) {
+//       res.push(char);
+//       words = words.map((word) => word.replace(char, ""));
+//     }
+//   }
+
+//   return res;
+// };
+
+// console.log(commonChars(["bella", "label", "roller"])); // Output: ["e", "l", "l"]
+// console.log(commonChars(["cool", "lock", "cook"])); // Output: ["c", "o"]
+
+//! 2744. Find Maximum Number of String Pairs
+// var maximumNumberOfStringPairs = function (words) {
+//   let count = 0;
+//   for (let i = 0; i < words.length; i++) {
+//     for (let j = i + 1; j < words.length; j++) {
+//       if (words[i] === words[j].split("").reverse().join("")) {
+//         count++;
+//         words.splice(j, 1);
+//         j--;
+//       }
+//     }
+//   }
+//   return count;
+// };
+// console.log(maximumNumberOfStringPairs(["cd", "ac", "dc", "ca", "zz"]));
+// console.log(maximumNumberOfStringPairs(["ab", "ba", "cc"]));
+// console.log(maximumNumberOfStringPairs(["aa", "ab"]));
+
+//! 1684. Count the Number of Consistent Strings
+// var countConsistentStrings = function (allowed, words) {
+//   let count = 0;
+//   for (let i = 0; i < words.length; i++) {
+//     for (let j = 0; j < words[i].length; j++) {
+//       if (!allowed.includes(words[i][j])) {
+//         break;
+//       }
+//       if (j === words[i].length - 1) {
+//         count++;
+//       }
+//     }
+//   }
+//   return count;
+// };
+// console.log(countConsistentStrings("ab", ["ad", "bd", "aaab", "baa", "badab"]));
+// console.log(
+//   countConsistentStrings("abc", ["a", "b", "c", "ab", "ac", "bc", "abc"])
+// );
+// console.log(
+//   countConsistentStrings("cad", [
+//     "cc",
+//     "acd",
+//     "b",
+//     "ba",
+//     "bac",
+//     "bad",
+//     "ac",
+//     "d",
+//   ])
+// );
+
+// //! 2108. Find First Palindromic String in the Array
+// var firstPalindrome = function (words) {
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i] === words[i].split("").reverse().join("")) {
+//       return words[i];
+//     }
+//   }
+//   return "";
+// };
+// console.log(firstPalindrome(["abc", "car", "ada", "racecar", "cool"]));
+// console.log(firstPalindrome(["notapalindrome", "racecar"]));
+// console.log(firstPalindrome(["def", "ghi"]));
+
+// //! 3151. Special Array I
+// var isArraySpecial = function (nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if ((nums[i] + nums[i + 1]) % 2 === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(isArraySpecial([1])); // true
+// console.log(isArraySpecial([2, 1, 4])); // true
+// console.log(isArraySpecial([4, 3, 1, 6])); //false
+
+//! 2506. Count Pairs Of Similar Strings
+// var similarPairs = function (words) {
+//   let count = 0;
+//   let str = words.map((word) => [...new Set(word)].sort().join(""));
+//   for (let i = 0; i < str.length; i++) {
+//     for (let j = i + 1; j < str.length; j++) {
+//       if (str[i] === str[j]) {
+//         count++;
+//       }
+//     }
+//   }
+//   return count;
+// };
+// console.log(similarPairs(["aba", "aabb", "abcd", "bac", "aabc"])); //2
+// console.log(similarPairs(["aabb", "ab", "ba"])); //3
+// console.log(similarPairs(["nba", "cba", "dba"])); //0
+
+//! 2496. Maximum Value of a String in an Array
+// var maximumValue = function (strs) {
+//   let count = 0;
+//   for (let i = 0; i < strs.length; i++) {
+//     if (isNaN(Number(strs[i]))) {
+//       if (strs[i].length > count) {
+//         count = strs[i].length;
+//       }
+//     } else {
+//       if (Number(strs[i]) > count) {
+//         count = Number(strs[i]);
+//       }
+//     }
+//   }
+//   return count;
+// };
+// console.log(maximumValue(["alic3", "bob", "3", "4", "00000"])); //output = 5
+// console.log(maximumValue(["1", "01", "001", "0001"])); //output = 1
+
+//! 1752. Check if Array Is Sorted and Rotated
+// var check = function (nums) {
+//   let count = 0;
+//   for (let i = 1; i < nums.length; i++) {
+//     if (nums[i] < nums[i - 1]) {
+//       count ++;
+//     }
+//   }
+//   nums[nums.length - 1] > nums[0] && count++;
+//   return count <= 1;
+// };
+// console.log(check([3, 4, 5, 1, 2])); //true
+// console.log(check([2, 1, 3, 4])); //false
+// console.log(check([1, 2, 3])); //true
+
+//! 3105. Longest Strictly Increasing or Strictly Decreasing Subarray
+// var longestMonotonicSubarray = function (nums) {
+//   if (nums.length === 0) return 0;
+//   let longest = 1;
+//   let inc = 1;
+//   let dec = 1;
+//   for (let i = 1; i < nums.length; i++) {
+//     if (nums[i] > nums[i - 1]) {
+//       inc++;
+//       dec = 1;
+//     } else if (nums[i] < nums[i - 1]) {
+//       dec++;
+//       inc = 1;
+//     } else {
+//       inc = 1;
+//       dec = 1;
+//     }
+//     longest = Math.max(longest, inc, dec);
+//   }
+//   return longest;
+// };
+// console.log(longestMonotonicSubarray([1, 4, 3, 3, 2]));
+// console.log(longestMonotonicSubarray([3, 3, 3, 3]));
+// console.log(longestMonotonicSubarray([3, 2, 1]));
+
+//! 1800. Maximum Ascending Subarray Sum
+// var maxAscendingSum = function (nums) {
+//   let sum = nums[0];
+//   let currentSum = nums[0];
+//   for (let i = 1; i < nums.length; i++) {
+//     if (nums[i] > nums[i - 1]) {
+//       currentSum += nums[i];
+//     } else {
+//       currentSum = nums[i];
+//     }
+//     sum = Math.max(sum, currentSum);
+//   }
+//   return sum;
+// };
+// console.log(maxAscendingSum([10, 20, 30, 5, 10, 50])); //65
+// console.log(maxAscendingSum([10, 20, 30, 40, 50])); //150
+// console.log(maxAscendingSum([12, 17, 15, 13, 10, 11, 12])); //33
+
+//! 1790. Check if One String Swap Can Make Strings Equal
+// var areAlmostEqual = function (s1, s2) {
+//   let count = 0;
+//   for (let i = 0; i < s1.length; i++) {
+//     if (s1[i] !== s2[i]) {
+//       count++;
+//     }
+//   }
+//   if (count === 0) {
+//     return true;
+//   } else if (count === 2) {
+//     let arr = [];
+//     for (let i = 0; i < s1.length; i++) {
+//       if (s1[i] !== s2[i]) {
+//         arr.push(i);
+//       }
+//     }
+//     if (s1[arr[0]] === s2[arr[1]] && s1[arr[1]] === s2[arr[0]]) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   } else {
+//     return false;
+//   }
+// };
+// console.log(areAlmostEqual("bank", "kanb")); //true
+// console.log(areAlmostEqual("attack", "defend")); //false
+// console.log(areAlmostEqual("kelb", "kelb")); //true
+
+//! 2678. Number of Senior Citizens
+// var countSeniors = function (details) {
+//   let count = 0;
+//   for (let i = 0; i < details.length; i++) {
+//     if (Number(details[i].slice(11, 13)) > 60) {
+//       count++;
+//     }
+//   }
+//   return count;
+// };
+// console.log(
+//   countSeniors(["7868190130M7522", "5303914400F9211", "9273338290F4010"])
+// );
+// console.log(countSeniors(["1313579440F2036", "2921522980M5644"]));
+
+//! 83. Remove Duplicates from Sorted List
+// var deleteDuplicates = function (head) {
+//   let res = [];
+//   for (let i = 0; i < head.length; i++) {
+//     if (!res.includes(head[i])) {
+//       res.push(head[i]);
+//     }
+//   }
+//   return res;
+// };
+// console.log(deleteDuplicates([1, 1, 2])); //[1,2]
+// console.log(deleteDuplicates([1, 1, 2, 3, 3])); //[1,2,3]
+
+//! 929. Unique Email Addresses
+// var numUniqueEmails = function (emails) {
+//     let res = [];
+//     for (let i = 0; i < emails.length; i++) {
+//         let email = emails[i].split("@");
+//         email[0] = email[0].split("+")[0].replace(/\./g, "");
+//         res.push(email.join("@"));
+//     }
+//     return new Set(res).size;
+// };
+// console.log(
+//   numUniqueEmails([
+//     "test.email+alex@leetcode.com",
+//     "test.e.mail+bob.cathy@leetcode.com",
+//     "testemail+david@lee.tcode.com",
+//   ])
+// );
+// console.log(
+//   numUniqueEmails(["a@leetcode.com", "b@leetcode.com", "c@leetcode.com"])
+// );

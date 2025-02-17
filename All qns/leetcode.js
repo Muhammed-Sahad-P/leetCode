@@ -874,3 +874,33 @@
 // console.log(
 //   numUniqueEmails(["a@leetcode.com", "b@leetcode.com", "c@leetcode.com"])
 // );
+
+//! 49. Group Anagrams
+// var groupAnagrams = function (strs) {
+//   let map = new Map();
+//   for (let i = 0; i < strs.length; i++) {
+//       let key = strs[i].split("").sort().join("");
+//     if (map.has(key)) {
+//       map.get(key).push(strs[i]);
+//     } else {
+//       map.set(key, [strs[i]]);
+//     }
+//   }
+//   return Array.from(map.values());
+// };
+// console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// console.log(groupAnagrams([""]));
+// console.log(groupAnagrams(["a"]));
+
+//! 70. Climbing Stairs
+// var climbStairs = function (n) {
+//   let dp = [1, 2];
+//   for (let i = 2; i < n; i++) {
+//     dp.push(dp[i - 1] + dp[i - 2]);
+//   }
+//   return dp[n - 1];
+// };
+// console.log(climbStairs(2));
+// console.log(climbStairs(3));
+
+

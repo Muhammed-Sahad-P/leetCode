@@ -137,3 +137,36 @@
 //     .join(" ");
 // }
 // console.log(reverseWords("hello world")); // Output: "olleh dlrow"
+
+// //! 1. Two Sum
+// function twoSum(nums, target) {
+//   let map = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//     let diff = target - nums[i];
+//     if (map.has(diff)) {
+//       return [map.get(diff), i];
+//     }
+//     map.set(nums[i], i);
+//   }
+//   return [];
+// }
+// console.log(twoSum([2, 7, 11, 15], 9));
+// console.log(twoSum([3, 2, 4], 6));
+// console.log(twoSum([3, 3], 6));
+
+//! IsPalindrome check
+// function isPalindrome(str) {
+//   // return str === str.split("").reverse().join("");
+//   let left = 0;
+//   let right = str.length - 1;
+
+//   while (left < right) {
+//     if (str[left] !== str[right]) return false;
+//     left++;
+//     right--;
+//   }
+//   return true;
+// }
+// console.log(isPalindrome("racecar")); //true
+// console.log(isPalindrome("madam")); //true
+// console.log(isPalindrome("hello")); //false

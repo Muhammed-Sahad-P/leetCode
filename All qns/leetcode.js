@@ -903,4 +903,49 @@
 // console.log(climbStairs(2));
 // console.log(climbStairs(3));
 
+//! 283. Move Zeroes
+// var moveZeroes = function (nums) {
+//   let count = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === 0) {
+//       count++;
+//     } else {
+//       nums[i - count] = nums[i];
+//     }
+//   }
+//   for (let i = nums.length - count; i < nums.length; i++) {
+//     nums[i] = 0;
+//   }
+//   return nums;
+// };
+// console.log(moveZeroes([0, 1, 0, 3, 12]));
+// console.log(moveZeroes([0]));
 
+//! 290. Word Pattern
+// var wordPattern = function (pattern, s) {
+//   let arr = s.split(" ");
+//   if (pattern.length !== arr.length) return false;
+//   let map = new Map();
+//   let set = new Set();
+//   for (let i = 0; i < pattern.length; i++) {
+//     if (map.has(pattern[i])) {
+//       if (map.get(pattern[i]) !== arr[i]) return false;
+//     } else {
+//       if (set.has(arr[i])) return false;
+//       map.set(pattern[i], arr[i]);
+//       set.add(arr[i]);
+//     }
+//   }
+//   return true;
+// };
+// console.log(wordPattern("abba", "dog cat cat dog"));
+// console.log(wordPattern("abba", "dog cat cat fish"));
+// console.log(wordPattern("aaaa", "dog cat cat dog"));
+
+//! 67. Add Binary
+// var addBinary = function (a, b) {
+//   let res = (BigInt(`0b${a}`) + BigInt(`0b${b}`)).toString(2);
+//   return res;
+// };
+// console.log(addBinary("11", "1"));
+// console.log(addBinary("1010", "1011"));

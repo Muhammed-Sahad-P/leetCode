@@ -949,3 +949,34 @@
 // };
 // console.log(addBinary("11", "1"));
 // console.log(addBinary("1010", "1011"));
+
+//! 2460. Apply Operations to an Array
+// var applyOperations = function (nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] === nums[i + 1]) {
+//       nums[i] *= 2;
+//       nums[i + 1] = 0;
+//     }
+//   }
+//   let result = nums.filter((num) => num !== 0);
+//   while (result.length < nums.length) {
+//     result.push(0);
+//   }
+
+//   return result;
+// };
+
+// console.log(applyOperations([1, 2, 2, 1, 1, 0]));
+// console.log(applyOperations([0, 1]));
+
+//! 326. Power of Three
+// var isPowerOfThree = function (n) {
+//   if (n <= 0) return false;
+//   while (n % 3 === 0) {
+//     n /= 3;
+//   }
+//   return n === 1;
+// };
+// console.log(isPowerOfThree(27));
+// console.log(isPowerOfThree(0));
+// console.log(isPowerOfThree(-1));

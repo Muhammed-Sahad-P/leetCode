@@ -980,3 +980,66 @@
 // console.log(isPowerOfThree(27));
 // console.log(isPowerOfThree(0));
 // console.log(isPowerOfThree(-1));
+
+//! 1780. Check if Number is a Sum of Powers of Three
+// var checkPowersOfThree = function (n) {
+//   while (n > 0) {
+//     if (n % 3 !== 0) {
+//       n = n - 1;
+//     }
+//     if (n % 3 !== 0) return false;
+//     n = n / 3;
+//   }
+//   return true;
+// };
+// console.log(checkPowersOfThree(12)); // true
+// console.log(checkPowersOfThree(91)); // true
+// console.log(checkPowersOfThree(21)); // false
+
+//! 2965. Find Missing and Repeated Values
+// var findMissingAndRepeatedValues = function (grid) {
+//   let set = new Set();
+//   let repeated = 0;
+//   let missing = 0;
+//   for (let i = 0; i < grid.length; i++) {
+//     for (let j = 0; j < grid[i].length; j++) {
+//       if (set.has(grid[i][j])) {
+//         repeated = grid[i][j];
+//       } else {
+//         set.add(grid[i][j]);
+//       }
+//     }
+//   }
+//   for (let i = 1; i <= grid.length * grid[0].length; i++) {
+//     if (!set.has(i)) {
+//       missing = i;
+//     }
+//   }
+//   return [repeated, missing];
+// };
+// console.log(
+//   findMissingAndRepeatedValues([
+//     [1, 3],
+//     [2, 2],
+//   ])
+// ); //[2,4]
+// console.log(
+//   findMissingAndRepeatedValues([
+//     [9, 1, 7],
+//     [8, 9, 2],
+//     [3, 4, 6],
+//   ])
+// ); //[9,5]
+
+//! 191. Number of 1 Bits
+// var hammingWeight = function (n) {
+//   let count = 0;
+//   while (n > 0) {
+//     n = n & (n - 1);
+//     count++;
+//   }
+//   return count;
+// };
+// console.log(hammingWeight(11));
+// console.log(hammingWeight(128));
+// console.log(hammingWeight(2147483645));

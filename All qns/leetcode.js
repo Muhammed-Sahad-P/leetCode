@@ -1043,3 +1043,69 @@
 // console.log(hammingWeight(11));
 // console.log(hammingWeight(128));
 // console.log(hammingWeight(2147483645));
+
+//! 2379. Minimum Recolors to Get K Consecutive Black Blocks
+// var minimumRecolors = function (blocks, k) {
+//   let count = 0;
+//   for (let i = 0; i < k; i++) {
+//     if (blocks[i] === "W") {
+//       count++;
+//     }
+//   }
+//   let min = count;
+//   for (let i = k; i < blocks.length; i++) {
+//     if (blocks[i] === "W") {
+//       count++;
+//     }
+//     if (blocks[i - k] === "W") {
+//       count--;
+//     }
+//     min = Math.min(min, count);
+//   }
+//   return min;
+// };
+// console.log(minimumRecolors("WBBWWBBWBW", 7));
+// console.log(minimumRecolors("WBWBBBW", 2));
+
+//! 205. Isomorphic Strings
+// var isIsomorphic = function (s, t) {
+//   if (s.length !== t.length) return false;
+//   let map = new Map();
+//   let set = new Set();
+//   for (let i = 0; i < s.length; i++) {
+//     if (map.has(s[i])) {
+//       if (map.get(s[i]) !== t[i]) return false;
+//     } else {
+//       if (set.has(t[i])) return false;
+//       map.set(s[i], t[i]);
+//       set.add(t[i]);
+//     }
+//   }
+//   return true;
+// };
+// console.log(isIsomorphic("egg", "add"));
+// console.log(isIsomorphic("foo", "bar"));
+// console.log(isIsomorphic("paper", "title"));
+
+// var divideArray = function (nums) {
+//   let map = new Map();
+//   for (let num of nums) {
+//     map.set(num, (map.get(num) || 0) + 1);
+//   }
+//   let count = 0;
+//   for (let [key, value] of map) {
+//     if (value % 2 !== 0) count++;
+//   }
+//   return count <= 1;
+// };
+// var divideArray = function (nums) {
+//   nums.sort((a, b) => a - b);
+//   for (let i = 0; i < nums.length; i += 2) {
+//     if (nums[i] !== nums[i + 1]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(divideArray([3, 2, 3, 2, 2, 2]));
+// console.log(divideArray([1, 2, 3, 4]));

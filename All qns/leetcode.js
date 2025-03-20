@@ -1109,3 +1109,10 @@
 // };
 // console.log(divideArray([3, 2, 3, 2, 2, 2]));
 // console.log(divideArray([1, 2, 3, 4]));
+
+//! 2413. Smallest Even Multiple
+// var smallestEvenMultiple = function (n) {
+//   return n % 2 === 0 ? n : n * 2;
+// };
+// console.log(smallestEvenMultiple(5)); //10
+// console.log(smallestEvenMultiple(6)); //6
